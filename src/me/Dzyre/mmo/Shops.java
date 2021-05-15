@@ -7,15 +7,17 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class Shops {
+public class Shops implements Listener, CommandExecutor {
 
 	public static Inventory inv;
 	public static Inventory diamondArmor;
@@ -24,7 +26,6 @@ public class Shops {
 	
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]) {
-
 		if (label.equalsIgnoreCase("shop")) {
 			Player player = (Player) sender;
 			player.openInventory(inv);
